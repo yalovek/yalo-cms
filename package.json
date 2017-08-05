@@ -4,6 +4,8 @@
   "description": "Node.js CMS",
   "main": "index.js",
   "scripts": {
+    "lint": "eslint .",
+    "start": "babel-node .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -11,5 +13,39 @@
     "cms"
   ],
   "author": "Vadim Yalovenko <yalovek@ya.ru>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "convict": "^2.0.0",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "react-router": "^3.0.2"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.23.0",
+    "babel-preset-env": "^1.2.0",
+    "babel-preset-react": "^6.23.0",
+    "eslint": "^3.15.0",
+    "eslint-config-airbnb": "latest",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^3.0.2 || ^4.0.0",
+    "eslint-plugin-react": "^6.9.0",
+    "pre-commit": "^1.2.2"
+  },
+  "babel": {
+    "presets": [
+      "env",
+      "react"
+    ]
+  },
+  "eslintConfig": {
+    "extends": "airbnb",
+    "plugins": [
+      "react",
+      "jsx-a11y",
+      "import"
+    ]
+  },
+  "pre-commit": [
+    "lint"
+  ]
 }
